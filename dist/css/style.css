@@ -71,17 +71,14 @@ h2.title {
   z-index: 1000;
   height: 50px;
   width: 100%;
-  background-color: rgba(50, 154, 240, 0.288);
 }
 
 .header__content {
-  top: 0;
-  left: 50%;
+  top: 100px;
   text-align: center;
   width: 100%;
   height: 100%;
   position: absolute;
-  transform: translateX(-50%);
 }
 
 .header__icon-container {
@@ -102,14 +99,31 @@ h2.title {
   display: flex;
   list-style: none;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 0;
+}
+
+.menu__burger-icon.active {
+  z-index: 2;
+}
+
+.menu__burger-icon.active span {
+  opacity: 0;
+}
+
+.menu__burger-icon.active:before {
+  transform: rotateZ(45deg) translateY(11px);
+}
+
+.menu__burger-icon.active:after {
+  transform: rotateZ(-45deg) translateY(-11px);
 }
 
 .menu__link {
   font-size: 14px;
   font-family: "Josefin Sans";
-  font-weight: 600;
+  font-weight: 400;
+  text-align: left;
   margin: 0;
   padding: 20px;
   color: rgb(255, 255, 255);
@@ -122,6 +136,20 @@ h2.title {
 
 .menu__burger-icon {
   display: none;
+}
+
+.menu__logo {
+  text-align: left;
+  width: 192px;
+  height: 32px;
+  position: absolute;
+  left: 40px;
+  top: 11px;
+}
+
+.menu__logo .logo {
+  width: 100%;
+  height: 100%;
 }
 
 .footer__menu .menu__list {
@@ -139,7 +167,7 @@ h2.title {
   margin-top: -50px;
   width: 100%;
   top: 0;
-  background: url("../img/desktop/image-hero.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/desktop/image-hero.jpg");
   background-size: cover;
 }
 
@@ -152,7 +180,9 @@ h2.title {
 }
 
 .main-heading__container {
-  padding: 100px 20px;
+  height: 650px;
+  display: flex;
+  align-items: center;
 }
 
 .main-heading__content {
@@ -168,12 +198,16 @@ h2.title {
 }
 
 .main-heading__title {
-  line-height: 1.5;
+  font-family: "Josefin Sans";
+  line-height: 1;
+  max-width: 600px;
   color: #fff;
-  text-align: center;
-  font-size: calc(38px + 10 * ((100vw - 320px) / 1600));
-  text-transform: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: calc(38px + 34 * ((100vw - 320px) / 1600));
   margin: 0;
+  padding: 40px;
+  border: 1px #fff solid;
 }
 
 .main-heading__text {
@@ -182,6 +216,34 @@ h2.title {
 
 .section {
   margin-top: 30px;
+}
+
+.introduction__information .info-block {
+  position: relative;
+}
+
+.introduction__information .img-container {
+  width: 70%;
+}
+
+.introduction__information .text-container {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  padding: 96px 0 0 96px;
+  left: 50%;
+  background-color: #fff;
+}
+
+.introduction__information .text-container .text {
+  margin: 0;
+}
+
+.introduction__information .title {
+  font-family: "Josefin Sans";
+  font-weight: 300;
+  font-size: 48px;
+  margin-top: 0;
 }
 
 .info-block__container {
@@ -364,12 +426,6 @@ h2.title {
   }
 }
 
-@media (max-width: 992px) {
-  .menu__list {
-    justify-content: flex-end;
-  }
-}
-
 @media (max-width: 978px) {
   ._container {
     max-width: 600px;
@@ -384,16 +440,6 @@ h2.title {
 
   ._container {
     max-width: none;
-  }
-
-  .menu__list {
-    flex-direction: row;
-    align-content: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    width: 60%;
-    position: absolute;
-    right: 0;
   }
 
   .menu__link {
@@ -416,6 +462,7 @@ h2.title {
   }
 
   .main-heading {
+    background-size: cover;
     background-clip: content-box;
     background-repeat: no-repeat;
     background-position: center;
@@ -441,6 +488,14 @@ h2.title {
     padding: 0 10px;
   }
 
+  .menu__body.active {
+    display: flex;
+    height: 100vh;
+    background-color: #000;
+    z-index: -1;
+    align-items: center;
+  }
+
   .menu__list {
     display: none;
   }
@@ -453,17 +508,13 @@ h2.title {
     align-items: center;
     height: initial;
     overflow: scroll;
-    right: 50px;
-    margin: 20px;
-    background-color: rgb(0, 91, 193);
+    right: 0;
+    margin: 0;
+    width: 100%;
   }
 
-  .menu__list:hover {
-    background-color: rgba(255, 255, 255, 0.6);
-  }
-
-  .menu__list:hover .menu__link {
-    color: rgb(0, 91, 193);
+  .menu__list.active .menu__link {
+    text-transform: uppercase;
   }
 
   .menu__link {
@@ -490,6 +541,8 @@ h2.title {
     background-color: #fff;
     position: absolute;
     top: 40%;
+    opacity: 1;
+    transition: opacity ease-in 0.1s;
   }
 
   .menu__burger-icon:before,
@@ -500,6 +553,7 @@ h2.title {
     height: 2px;
     background-color: #fff;
     left: 0;
+    transition: transform ease-in 0.3s;
   }
 
   .menu__burger-icon:before {
@@ -508,6 +562,14 @@ h2.title {
 
   .menu__burger-icon:after {
     bottom: 2px;
+  }
+
+  .menu__logo {
+    width: 60%;
+    height: 15px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
   }
 
   .footer__menu .menu__list {
@@ -539,6 +601,7 @@ h2.title {
 
   .main-heading {
     background: url("../img/mobile/image-hero.jpg");
+    background-size: cover;
   }
 
   .main-heading__content {
@@ -556,6 +619,10 @@ h2.title {
 
   .info-block__container .info-block ~ .info-block {
     margin-left: 0;
+  }
+
+  .main-content__info {
+    display: block;
   }
 
   .main-content .img-container {
