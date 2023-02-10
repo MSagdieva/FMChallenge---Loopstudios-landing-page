@@ -1,0 +1,127 @@
+.footer{
+    background-color: $black;
+    &__content._container{
+        color:#fff;
+        font-size:14px;
+        font-family: $fontFamily;
+        font-weight: 400;
+        padding-top: 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__container {
+        @include adaptive-value('font-size', 14, 10, 0);
+        hr.line{
+            border-width: 0;
+            height: 1px;
+            background-color: rgb(168, 168, 168);
+        }
+    }
+    &__menu-container-row{
+        display: flex;
+        align-items: center;
+        .footer__menu-container{
+            margin-top: -36px;
+        }
+    }
+    &__content-row:first-child{
+        max-width: 40%;
+    }
+    &__content-row:nth-child(3){
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__menu {
+        display: flex;
+    }
+    &__menu-link{
+        margin-bottom: 20px;
+        margin-left:20px;
+    }
+    &__social-icons{
+        display: flex;
+        margin-top: 50px;
+        .social-icon{
+            width: 34px;
+            height: 31px;
+            margin-right: 10px;
+        }
+
+    } 
+    
+    &__logo-container{
+        width: 152px;
+        height: 24px;
+        margin-bottom: 30px;
+    }
+    &__logo{
+        width: 100%;
+        height: 100%;
+    }
+
+}
+.contacts {
+    @media (max-width: $md4+px){
+        flex-direction: column;
+        text-align: center;
+    }
+    &__block{
+        display: flex;
+    }
+    &__adress {
+        text-align: center;
+        margin: 36px 0;
+        @media (max-width: $md4+px){
+            flex-basis: 0;
+            margin: 10px 0;
+        }
+    }
+    &__phone{
+        margin: 34px 0;
+    }
+    &__email {
+        margin: 36px 0;
+        text-align: right;
+        @media (max-width: $md4+px){
+            text-align: center;
+            margin: 10px 0;
+        }
+    }
+    .footer__social-icon-container{
+        margin-right: 30px;
+    }
+}
+.phone-number {
+    font-size: 18px;
+    margin: 0;
+
+}
+
+.copyright {
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+    @media (max-width: $md4+px){
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    &__text {
+        flex-grow: 1;
+    }
+    
+
+    &__author {
+        flex-grow: 1;
+        text-align: right;
+        @media (max-width: $md4+px){
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+}
+.copyright {
+    padding-top: 20px;
+    &__sign {
+    }
+}
