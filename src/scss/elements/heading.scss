@@ -2,15 +2,17 @@
             margin-top:-50px;
             width: 100%;
             top:0;
-            background: url("../img/desktop/image-hero.jpg");
+            background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.8)), url("../img/desktop/image-hero.jpg");
             background-size: cover;
         @media (max-width:$md3+px) {
+            background-size: cover;
             background-clip: content-box;
             background-repeat: no-repeat;
             background-position: center;
         }
         @media (max-width:$md4+px) {
             background: url("../img/mobile/image-hero.jpg");
+            background-size: cover;
         }
     &__btn {
         position:absolute;
@@ -24,7 +26,9 @@
     }
 
     &__container {
-        padding: 100px 20px;
+        height: 650px;
+        display: flex;
+        align-items: center;
     }
 
     &__content {
@@ -50,12 +54,16 @@
     }
 
     &__title {
-        line-height: 1.5;
+        font-family: $SecondFontFamily;
+        line-height: 1;
+        max-width: 600px;
         color:#fff;
-        text-align: center;
-        @include adaptive-value('font-size', 48, 38, 0);
-        text-transform: none;
+        font-weight: 300;
+        text-transform:uppercase;
+        @include adaptive-value('font-size', 72, 38, 0);
         margin:0;
+        padding: 40px;
+        border: 1px $white solid;
         @media (max-width: $md4+px) {
             font-size: 30px;
         }
