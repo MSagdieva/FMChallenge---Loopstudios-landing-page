@@ -8,4 +8,5 @@ window.addEventListener('click', function(e){
         menu.classList.toggle('active');
         burger.classList.toggle('active');
         menu_body.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
     }});

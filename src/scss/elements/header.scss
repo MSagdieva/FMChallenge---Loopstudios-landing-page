@@ -10,7 +10,16 @@
         height:100%;
         position:relative;
         margin: 0 auto;
+        @media (max-width: $md4+px){
+        top: initial;
     }
+    }
+
+    &__content._container{
+    @media (max-width: $md4+px){
+        padding: 0;
+    }
+}
     &__icon-container{
     }
     &__icon-image{

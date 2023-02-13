@@ -3,6 +3,9 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    @media (max-width: $md4+px){
+        display: block;
+    }
     &__body.active{
         @media (max-width: $md4+px){
             display:flex;
@@ -122,7 +125,7 @@
             height: 100%;
         }
         @media (max-width: $md4+px){
-            width: 60%;
+            width: 40%;
             height: 20px;
             position: absolute;
             left: 20px;
