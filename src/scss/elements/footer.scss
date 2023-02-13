@@ -8,6 +8,9 @@
         padding-top: 100px;
         display: flex;
         justify-content: space-between;
+        @media (max-width: $md4+px){
+            display: block;
+        }
     }
     &__container {
         @include adaptive-value('font-size', 14, 10, 0);
@@ -34,6 +37,9 @@
     }
     &__menu {
         display: flex;
+        @media (max-width: $md4+px){
+            display: block;
+        }
     }
     &__menu-link{
         margin-bottom: 20px;
