@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Alata:regular&display=swap&subset=cyrillic-ext");
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,regular,600&display=swap&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap&subset=cyrillic-ext");
 @import url('/src/scss/normalize.css');
 
 @import 'mixins/adaptive-value';
@@ -41,9 +41,10 @@ margin: 150px 0 0 0;
     text-transform: uppercase;
 }
 h2.title{
-    @include adaptive-value('font-size', 26, 18, 0);
+    @include adaptive-value('font-size', 48, 32, 0);
     display: block;
     line-height: 1.8;
+    font-weight: 400;
     margin: 30px;
     @media (max-width:$md3+px){
         margin: 20px;
