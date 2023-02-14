@@ -79,12 +79,16 @@ h2.title {
 }
 
 .header__content {
-  top: 100px;
+  top: 64px;
   text-align: center;
   width: 100%;
   height: 100%;
   position: relative;
   margin: 0 auto;
+}
+
+.header__content._container {
+  position: relative;
 }
 
 .header__icon-image {
@@ -132,14 +136,23 @@ h2.title {
   font-family: "Josefin Sans";
   font-weight: 400;
   text-align: left;
-  margin: 0;
-  padding: 20px;
+  margin-right: 30px;
   color: rgb(255, 255, 255);
   transition: all 0.3s ease-in;
+  position: relative;
 }
 
-.menu__link:hover {
-  transform: scaleX(1.2) scaleY(1.2);
+.menu__link:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: #fff;
+  z-index: 2;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .menu__burger-icon {
@@ -157,15 +170,27 @@ h2.title {
   height: 100%;
 }
 
-.footer__menu .menu__list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 35px 35px;
+.footer__menu .menu-link {
+  margin: 20px 30px 0 0;
+  font-size: calc(10px + 4 * ((100vw - 320px) / 1120));
+  position: relative;
 }
 
-.footer__menu .menu__link {
-  margin: 0;
-  font-size: calc(10px + 4 * ((100vw - 320px) / 1120));
+.footer__menu .menu-link:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: #fff;
+  z-index: 2;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.footer__menu .menu-link:first-child {
+  margin-left: 0;
 }
 
 .main-heading {
@@ -209,8 +234,9 @@ h2.title {
   color: #fff;
   font-weight: 300;
   text-transform: uppercase;
-  font-size: calc(38px + 34 * ((100vw - 320px) / 1120));
+  font-size: calc(48px + 24 * ((100vw - 320px) / 1120));
   margin: 0;
+  margin-top: 95px;
   padding: 40px;
   border: 1px #fff solid;
 }
@@ -416,13 +442,34 @@ h2.title {
 
 .footer__social-icons {
   display: flex;
-  margin-top: 50px;
+  justify-content: flex-end;
 }
 
 .footer__social-icons .social-icon {
-  width: 34px;
-  height: 31px;
+  width: 24px;
+  height: 24px;
   margin-right: 10px;
+  position: relative;
+}
+
+.footer__social-icon-container:last-child .social-icon {
+  margin-right: 0;
+}
+
+.footer__social-icon-container {
+  position: relative;
+}
+
+.footer__social-icon-container:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  z-index: 2;
+  bottom: -5px;
+  left: 0;
 }
 
 .footer__logo-container {
@@ -480,6 +527,8 @@ h2.title {
 
 .copyright {
   padding-top: 20px;
+  font-weight: 300;
+  font-family: "Josefin Sans";
 }
 
 @media (max-width: 1132px) {
@@ -495,6 +544,20 @@ h2.title {
 }
 
 @media (max-width: 992px) {
+  .menu {
+    align-items: flex-start;
+  }
+
+  .menu__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu__link {
+    padding: 5px 0 5px 0;
+    margin: 0 20px 0 0;
+  }
+
   .introduction__information .img-container {
     width: 100%;
   }
@@ -519,11 +582,6 @@ h2.title {
 
   ._container {
     max-width: none;
-  }
-
-  .menu__link {
-    padding: 5px 0 5px 0;
-    margin: 0 20px 0 0;
   }
 
   .footer__menu .menu__list {
@@ -573,11 +631,13 @@ h2.title {
   }
 
   .header__content {
-    top: initial;
+    top: 40px;
+    position: relative;
   }
 
   .header__content._container {
     padding: 0;
+    position: relative;
   }
 
   .menu {
@@ -586,10 +646,12 @@ h2.title {
 
   .menu__body.active {
     display: flex;
+    position: relative;
     height: 100vh;
     background-color: #000;
     z-index: -1;
     align-items: center;
+    top: -15px;
   }
 
   .menu__list {
@@ -618,6 +680,11 @@ h2.title {
     z-index: 2;
     padding: 0;
     margin: 20px;
+    font-weight: 300;
+  }
+
+  .menu__link:hover:after {
+    left: 0;
   }
 
   .menu__burger-icon {
@@ -661,28 +728,27 @@ h2.title {
   }
 
   .menu__logo {
-    width: 40%;
-    height: 20px;
+    width: 144px;
+    height: 24px;
     position: absolute;
     left: 20px;
     top: 20px;
   }
 
-  .footer__menu .menu__list {
+  .footer__menu .menu-list {
     display: block;
     flex-direction: row;
     width: initial;
     flex-wrap: nowrap;
     align-items: center;
     height: initial;
-    overflow: scroll;
     right: 0;
     top: 0;
     margin: 20px;
     text-align: center;
   }
 
-  .footer__menu .menu__link {
+  .footer__menu .menu-link {
     font-size: 10px;
     width: 100%;
     margin: 10px 0;
@@ -711,6 +777,7 @@ h2.title {
 
   .main-heading__title {
     font-size: 30px;
+    margin-top: 20px;
   }
 
   .info-block__container .info-block ~ .info-block {

@@ -60,12 +60,14 @@
         color:#fff;
         font-weight: 300;
         text-transform:uppercase;
-        @include adaptive-value('font-size', 72, 38, 0);
+        @include adaptive-value('font-size', 72, 48, 0);
         margin:0;
+        margin-top: 95px;
         padding: 40px;
         border: 1px $white solid;
         @media (max-width: $md4+px) {
             font-size: 30px;
+            margin-top: 20px;
         }
     }
 

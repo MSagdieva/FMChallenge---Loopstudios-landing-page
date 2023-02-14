@@ -62,16 +62,38 @@
     }
     &__social-icons{
         display: flex;
-        margin-top: 50px;
+        justify-content: flex-end;
         .social-icon{
-            width: 34px;
-            height: 31px;
+            width: 24px;
+            height: 24px;
             margin-right: 10px;
+            position: relative;
         }
         @media (max-width: $md4+px){
             justify-content: center;
         }
+
     } 
+    &__social-icon-container:last-child .social-icon{
+            margin-right: 0;
+        }
+    &__social-icon-container{
+        position: relative;
+        &:hover{
+            &:after{
+                content: "";
+                display: block;
+                position: absolute;
+                width: 24px;
+                height: 2px;
+                background: #fff;
+                z-index: 2;
+                bottom: -5px;
+                left:0;
+            }
+        }
+    }
+
     &__logo-container{
         width: 152px;
         height: 24px;
@@ -148,6 +170,8 @@
 }
 .copyright {
     padding-top: 20px;
+    font-weight: 300;
+    font-family: $SecondFontFamily;
     &__sign {
     }
 }
