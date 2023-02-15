@@ -30,6 +30,8 @@ Your users should be able to:
 
 ![screenshot1](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
 ![screenshot2](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
+![screenshot3](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
+![screenshot4](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
 
 ### Links
 

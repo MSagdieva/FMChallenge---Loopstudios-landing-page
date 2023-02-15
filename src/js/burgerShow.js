@@ -10,3 +10,15 @@ window.addEventListener('click', function(e){
         menu_body.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
     }});
+let infoBlocks = document.querySelectorAll('.main-content .info-block');
+console.log(infoBlocks);
+for(let block of infoBlocks){
+    block.addEventListener('mouseenter', function(e){
+        e.target.classList.remove('not-hover');
+        e.target.classList.add('hover');
+    })
+    block.addEventListener('mouseleave', function(e){
+        e.target.classList.remove('hover');
+        e.target.classList.add('not-hover');
+    })
+}

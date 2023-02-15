@@ -47,6 +47,11 @@
         flex-direction: column;
         justify-content: space-between;
     }
+    &__menu-container-row{
+        @media (max-width: $md4+px){
+            margin-bottom: 30px;
+        }
+    }
     &__menu {
         display: flex;
         @media (max-width: $md4+px){
@@ -169,8 +174,9 @@
     }
 }
 .copyright {
+    color: $secondary;
     padding-top: 20px;
-    font-weight: 300;
+    font-weight: 400;
     font-family: $SecondFontFamily;
     &__sign {
     }

@@ -13,11 +13,11 @@
         @media (max-width: $md4+px){
             display:flex;
             position: relative;
-            height: 100vh;
-            background-color:$black;
+            height: 105vh;
+            background-color: #000;
             z-index: -1;
             align-items: center;
-            top: -15px;
+            top: -50px;
         }
     }
     &__list {
@@ -66,7 +66,7 @@
             }
     &__link {
         font-size: 14px;
-        font-family: $SecondFontFamily;
+        font-family: $fontFamily;
         font-weight: 400;
         text-align: left;
         margin-right: 30px;
@@ -197,11 +197,12 @@
             right: 0;
             top:0;
             margin: 20px;
-            text-align: center;}
+            text-align: center;
+        }
         .menu-link{
             font-size: 10px;
             width: 100%;
-            margin: 10px 0;
+            margin: 16px 0;
             padding:0;
         }
         .menu__body{
