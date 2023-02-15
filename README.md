@@ -19,7 +19,7 @@ This is a solution to the [Loopstudios landing page coding challenge challenge o
 
 ### The challenge
 
-The challenge was to build out this landing page and get it looking as close to the design as possible.
+This challenge focuses mostly on HTML & CSS. There's a tiny bit of JS included for the mobile navigation toggle.
 
 Your users should be able to: 
 
@@ -28,15 +28,15 @@ Your users should be able to:
 
 ### Screenshot
 
-![screenshot1](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
-![screenshot2](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
-![screenshot3](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
-![screenshot4](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
+![screenshot1](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page/blob/master/Screenshots%20Loopstudios1.JPG)
+![screenshot2](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page/blob/master/Screenshots%20Loopstudios2.JPG)
+![screenshot3](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page/blob/master/Screenshots%20Loopstudios3.JPG)
+![screenshot4](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page/blob/master/Screenshots%20Loopstudios4.JPG)
 
 ### Links
 
 - Solution URL: [GitHub Page](https://github.com/MSagdieva/FMChallenge---Loopstudios-landing-page)
-- Live Site URL: [Live site URL]()
+- Live Site URL: [Live site URL](https://fm-challenge-loopstudios-landing-page.vercel.app)
 
 ## My process
 
@@ -49,21 +49,72 @@ assembly
 
 ### What I learned
 Basics skills:
-- HTML5 flexbox layout
+- HTML5 flexbox and grid layout
 - SCSS
-- 
-- 
+- CSS and JS hover animation
+- CSS pseudo elements
 
 
 ```scss
+// burger icon styles
+&__burger-icon{
+        display:none;
+        @media (max-width: $md4+px){
+        display: block;
+        width:30px;
+        height:20px;
+        color:#fff;
+        position:absolute;
+        right: 20px;
+        top:20px;
+        span{
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            top:40%;
+            opacity:1;
+            transition: opacity ease-in .1s;
+        }
+        &:before, &:after{
+            position:absolute;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            left:0;
+            transition: transform ease-in .3s;
+        }
+        &:before{
+            top:0;
+
+        }
+        &:after{
+            bottom:2px;
+        }
+    }
+  }
 ```
 
 
 ```scss
+// use of background change animation on hover
+    .info-block.hover{
+        .img-container{
+        &:after{
+            animation: changeBackground .3s forwards; 
+        }
+    }
+}
 ```
 
 ### Useful resources
-
+- [CSS reference book](https://cssreference.io/)
+- [HTML reference book](https://htmlreference.io/)
+- [FlexBox layout Cheatsheet](https://flexbox.help/)
+- [Grid layout Cheatsheet](https://grid.layoutit.com/)
+- [CSS Animation](https://learn.javascript.ru/css-animations)
 
 ## Author
 
